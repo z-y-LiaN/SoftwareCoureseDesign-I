@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace绑定一个对应的dao接口 -->
+
+<mapper namespace="dao.UserMapper">
+<!-- id 就是对应的方法名，resultType是sql语句执行的返回值 -->
+<!-- param 参数类型 -->	
+	<select id="getAllList" resultType="entity.User">
+		select*from epidemic.user
+	</select>
+	
+	<select id="getOneByPrimaryKey" parameterType="string" resultType="entity.User">
+		select*from epidemic.user where userID=#{userID}
+	</select>
+<!--根据班级筛选学生  -->
+	<select id="getAllListByClass"  parameterType="string" resultType="entity.User">
+		select*from epidemic.user where classNum=#{classNum}
+	</select>
+<!-- 根据keywords模糊查询 -->
+	<select id="getAllByString" parameterType="string" resultType="entity.User">
+		select*from epidemic.user where 
+			userID like CONCAT('%',#{infoString},'%') or
+			userName like CONCAT('%',#{infoString},'%') or
+			userPhone like CONCAT('%',#{infoString},'%') or
+			classNum like CONCAT('%',#{infoString},'%')
+	</select>
+<!-- 对象中的属性可以直接取出来 -->
+	<insert id="addOne" parameterType="entity.User">
+		insert into epidemic.user(userName,userPwd,userID,classNum,userPhone) values(#{userName},#{userPwd},#{userID},#{classNum},#{userPhone})
+	</insert>
+	
+	<update id="updateOne" parameterType="entity.User">
+		update epidemic.user set userName=#{userName},userPwd=#{userPwd},
+			classNum=#{classNum},userPhone=#{userPhone} where userID=#{userID}
+	</update>
+	
+	<delete id="deleteOneByPrimaryKey" parameterType="string">
+		delete from epidemic.user where userID=#{userID}
+	</delete>
+	
+	
+</mapper>

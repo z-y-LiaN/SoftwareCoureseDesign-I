@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.LeaveSheetMapper">
+	<select id="getAllList" resultType="entity.Leavesheet">
+		select*from epidemic.leavesheet
+	</select>
+	
+	<select id="getAllListByState" parameterType="string" resultType="entity.Leavesheet">
+		select*from epidemic.leavesheet where state=#{state}
+	</select>
+	
+	<select id="getOneByPrimaryKey" parameterType="string" resultType="entity.Leavesheet">
+		select*from epidemic.leavesheet where userID=#{userID}
+	</select>
+<!--  -->
+	<select id="getAllListByKind"  parameterType="string" resultType="entity.Leavesheet">
+		select*from epidemic.leavesheet where outThing=#{outThing}
+	</select>
+<!--  -->
+	<select id="getOneByKeyState" parameterType="string" resultType="entity.Leavesheet">
+		select*from epidemic.leavesheet where userID=#{param1} and state=#{param2}
+	</select>
+<!-- 更新状态 -->
+	<update id="updateState" >
+		update epidemic.leavesheet set state=#{arg2} where state=#{arg1} and userID=#{arg0} 
+	</update>
+	
+	<insert id="addOne" parameterType="entity.Leavesheet">
+		insert into epidemic.leavesheet(userID,outDate,returnDate,state,outThing,situation,note,userName) values(#{userID},#{outDate},#{returnDate},
+			#{state},#{outThing},#{situation},#{note},#{userName})
+	</insert>
+	
+<!-- 	<update id="updateOne" parameterType="entity.Leavesheet">
+		update epidemic.leavesheet set adminName=#{adminName},adminPwd=#{adminPwd} where adminID=#{adminID}
+	</update> -->
+	
+	<delete id="deleteOneByPrimaryKey" parameterType="string">
+		delete from epidemic.leavesheet where userID=#{userID}
+	</delete>
+</mapper>

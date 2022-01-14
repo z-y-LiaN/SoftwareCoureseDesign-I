@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<plugins>
+        <!-- 配置PageHelper分页插件 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+        </plugin>
+</plugins>
+
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC" />
+            <!-- 配置数据库连接信息 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/epidemic?useAffectedRows=true&amp;useUnicode=true&amp;characterEncoding=utf8" />
+                <property name="username" value="root" />
+                <property name="password" value="root" />
+            </dataSource>
+        </environment>
+    </environments>
+ <!--每一个mapper.xml都需要在config里面注册  -->
+ <mappers>
+ 	<mapper resource="mapper/UserMapper.xml"/> 
+ 	<mapper resource="mapper/AdminMapper.xml"/>
+ 	<mapper resource="mapper/ReportInMapper.xml"/>
+ 	<mapper resource="mapper/ReportOutMapper.xml"/>
+ 	<mapper resource="mapper/LeaveSheetMapper.xml"/>
+ 	<mapper resource="mapper/NoticeMapper.xml"/>
+ </mappers>  
+    
+    
+</configuration>

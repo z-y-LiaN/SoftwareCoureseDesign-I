@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>Epidemic_System</display-name>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ReportInServlet</servlet-name>
+    <servlet-class>servlet.ReportInServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportInServlet</servlet-name>
+    <url-pattern>/ReportInServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ReportOutServlet</servlet-name>
+    <servlet-class>servlet.ReportOutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportOutServlet</servlet-name>
+    <url-pattern>/ReportOutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddLeaveSheetServlet</servlet-name>
+    <servlet-class>servlet.AddLeaveSheetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddLeaveSheetServlet</servlet-name>
+    <url-pattern>/AddLeaveSheetServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ManageReportInByPageServlet</servlet-name>
+    <servlet-class>servlet.ManageReportInByPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageReportInByPageServlet</servlet-name>
+    <url-pattern>/ManageReportInByPageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ShowReportIn</servlet-name>
+    <servlet-class>servlet.ShowReportIn</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>ShowReportIn</servlet-name>
+    <url-pattern>/ShowReportIn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>NoticeServlet</servlet-name>
+    <servlet-class>servlet.NoticeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>NoticeAddServlet</servlet-name>
+    <servlet-class>servlet.NoticeAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ManageNoticeByPageServlet</servlet-name>
+    <servlet-class>servlet.ManageNoticeByPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ManageLeaveByPageServlet</servlet-name>
+    <servlet-class>servlet.ManageLeaveByPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>delNoticeServlet</servlet-name>
+    <servlet-class>servlet.delNoticeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckReadyServlet</servlet-name>
+    <servlet-class>servlet.CheckReadyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ImportUsersServlet</servlet-name>
+    <servlet-class>servlet.ImportUsersServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ReportHistoryServlet</servlet-name>
+    <servlet-class>servlet.ReportHistoryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ReportTodayServlet</servlet-name>
+    <servlet-class>servlet.ReportTodayServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LeaveServlet</servlet-name>
+    <servlet-class>servlet.LeaveServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddLeaveServlet</servlet-name>
+    <servlet-class>servlet.AddLeaveServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UsersInfoServlet</servlet-name>
+    <servlet-class>servlet.UsersInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddOneUserServlet</servlet-name>
+    <servlet-class>servlet.AddOneUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UploadExcelServlet</servlet-name>
+    <servlet-class>servlet.UploadExcelServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckLeaveServlet</servlet-name>
+    <servlet-class>servlet.CheckLeaveServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SearchNoticeByKeyServlet</servlet-name>
+    <servlet-class>servlet.SearchNoticeByKeyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ChartOneServlet</servlet-name>
+    <servlet-class>servlet.ChartOneServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ChartTwoServlet</servlet-name>
+    <servlet-class>servlet.ChartTwoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ChartThreeServlet</servlet-name>
+    <servlet-class>servlet.ChartThreeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ChartFourServlet</servlet-name>
+    <servlet-class>servlet.ChartFourServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateAdminServlet</servlet-name>
+    <servlet-class>servlet.UpdateAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SearchStuByKeyServlet</servlet-name>
+    <servlet-class>servlet.SearchStuByKeyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <servlet-class>servlet.UpdateUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>JudgeServlet</servlet-name>
+    <servlet-class>servlet.JudgeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ExportExcelServlet</servlet-name>
+    <servlet-class>servlet.ExportExcelServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>NoticeServlet</servlet-name>
+    <url-pattern>/NoticeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NoticeAddServlet</servlet-name>
+    <url-pattern>/NoticeAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManageNoticeByPageServlet</servlet-name>
+    <url-pattern>/ManageNoticeByPageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManageLeaveByPageServlet</servlet-name>
+    <url-pattern>/ManageLeaveByPageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>delNoticeServlet</servlet-name>
+    <url-pattern>/delNoticeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckReadyServlet</servlet-name>
+    <url-pattern>/CheckReadyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImportUsersServlet</servlet-name>
+    <url-pattern>/ImportUsersServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ReportHistoryServlet</servlet-name>
+    <url-pattern>/ReportHistoryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ReportTodayServlet</servlet-name>
+    <url-pattern>/ReportTodayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LeaveServlet</servlet-name>
+    <url-pattern>/LeaveServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddLeaveServlet</servlet-name>
+    <url-pattern>/AddLeaveServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UsersInfoServlet</servlet-name>
+    <url-pattern>/UsersInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddOneUserServlet</servlet-name>
+    <url-pattern>/AddOneUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadExcelServlet</servlet-name>
+    <url-pattern>/UploadExcelServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckLeaveServlet</servlet-name>
+    <url-pattern>/CheckLeaveServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchNoticeByKeyServlet</servlet-name>
+    <url-pattern>/SearchNoticeByKeyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChartOneServlet</servlet-name>
+    <url-pattern>/ChartOneServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChartTwoServlet</servlet-name>
+    <url-pattern>/ChartTwoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChartThreeServlet</servlet-name>
+    <url-pattern>/ChartThreeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChartFourServlet</servlet-name>
+    <url-pattern>/ChartFourServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateAdminServlet</servlet-name>
+    <url-pattern>/UpdateAdminServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchStuByKeyServlet</servlet-name>
+    <url-pattern>/SearchStuByKeyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <url-pattern>/UpdateUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JudgeServlet</servlet-name>
+    <url-pattern>/JudgeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ExportExcelServlet</servlet-name>
+    <url-pattern>/ExportExcelServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <deny-uncovered-http-methods/>
+</web-app>

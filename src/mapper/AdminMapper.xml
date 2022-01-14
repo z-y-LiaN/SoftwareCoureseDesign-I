@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace绑定一个对应的dao接口 -->
+
+<mapper namespace="dao.AdminMapper">
+<!-- id 就是对应的方法名，resultType是sql语句执行的返回值 -->
+<!-- param 参数类型 -->	
+	<select id="getAllList" resultType="entity.Admin">
+		select*from epidemic.admin
+	</select>
+	
+	<select id="getOneByPrimaryKey" parameterType="string" resultType="entity.Admin">
+		select*from epidemic.admin where adminID=#{adminID}
+	</select>
+	<insert id="addOne" parameterType="entity.Admin">
+		insert into epidemic.admin(adminName,adminPwd,adminID) values(#{adminName},#{adminPwd},#{adminID})
+	</insert>
+	
+	<update id="updateOne" parameterType="entity.Admin">
+		update epidemic.admin set adminName=#{adminName},adminPwd=#{adminPwd} where adminID=#{adminID}
+	</update>
+	
+	<delete id="deleteOneByPrimaryKey" parameterType="string">
+		delete from epidemic.admin where adminID=#{adminID}
+	</delete>
+	
+	
+</mapper>

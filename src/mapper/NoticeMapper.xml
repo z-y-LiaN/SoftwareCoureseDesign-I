@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.NoticeMapper">
+	<select id="getAllList" resultType="entity.Notice">
+		select *  from epidemic.notice  order by outTime desc
+	</select>
+	
+<!--  这里设置noticeID为主键且自动递增-->
+	<insert id="addOne" useGeneratedKeys="true" keyProperty="noticeID" parameterType="entity.Notice">
+		insert into epidemic.notice values(null,#{noticeTitle},#{noticeContent},#{outTime})
+	</insert>
+	<!--  (noticeID,noticeTitle,noticeContent,outTime)   -->
+	
+	<delete id="deleteOneByPrimaryKey" parameterType="int">
+		delete from epidemic.notice where noticeID=#{noticeID}
+	</delete>
+<!--  获取最新通知，即是noticeID最大的通知-->
+	<select id="getNewOne" resultType="entity.Notice">
+		select*from epidemic.notice where noticeID=(select max(noticeID) from epidemic.notice)
+	</select>
+<!--  -->
+	<select id="getOneByPrimaryKey" parameterType="int" resultType="entity.Notice">
+		select*from epidemic.notice where noticeID=#{noticeID}
+	</select>
+<!-- 根据keywords模糊查询 -->
+	<select id="getAllByKeywords" parameterType="string" resultType="entity.Notice">
+		select*from epidemic.notice where 
+			noticeTitle like CONCAT('%',#{keywords},'%') or
+			noticeContent like CONCAT('%',#{keywords},'%') 
+			order by outTime desc
+	</select>
+
+</mapper>

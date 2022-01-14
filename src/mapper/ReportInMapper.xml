@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.ReportInMapper">
+<!--  获取全部打卡记录-->
+	<select id="getAllList" resultType="entity.ReportIn">
+		select*from epidemic.reportin  order by reportTime desc
+	</select>
+<!-- 根据ID查找打卡记录 -->
+	<select id="getOneByPrimaryKey" parameterType="string" resultType="entity.ReportIn">
+		select*from epidemic.reportin where userID=#{userID} order by reportTime desc
+	</select>
+<!--新增一条在校打卡记录-->
+	<insert id="addOne" parameterType="entity.ReportIn">
+		insert into epidemic.reportin(userID,temperature,isSick,reportTime) values(#{userID},#{temperature},#{isSick},#{reportTime})
+	</insert>
+<!--  根据时间模糊查找打卡记录-->
+	<select id="getAllListByTime" parameterType="string" resultType="entity.ReportIn">
+		select*from epidemic.reportin where reportTime like CONCAT('%',#{timeString},'%') order by reportTime desc
+		<!-- 
+			like concat('%',#{name},'%')
+			like "%"#{timeString}"%" 
+		
+		 --> 
+	</select>
+
+</mapper>
